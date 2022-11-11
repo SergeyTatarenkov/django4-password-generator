@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <title>Генератор паролей</title>
+</head>
+<body>
+<div class="container text-center">
+<br>
+    <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'home' %}">Главная</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'about' %}">О проекте</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contact' %}">Контакты</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
+    <h1>Генератор паролей</h1>
+<br>
+<form action="{% url 'password' %}">
+    <label>Длина пароля:
+        <select name="length">
+        <option value="5">5 символов</option>
+        <option value="6">6 символов</option>
+        <option value="7">7 символов</option>
+        <option value="8">8 символов</option>
+        <option value="9">9 символов</option>
+        <option value="10" selected="selected">10 символов</option>
+        <option value="11">11 символов</option>
+        <option value="12">12 символов</option>
+        <option value="13">13 символов</option>
+        <option value="14">14 символов</option>
+    </select>
+    </label>
+    <br>
+    <label>Использовать вехний регистр:
+        <input type="checkbox" name="uppercase">
+    </label>
+    <br>
+    <label>Использовать цифры:
+        <input type="checkbox" name="numbers">
+    </label>
+    <br>
+    <label>Использовать специальные знаки:
+        <input type="checkbox" name="special">
+    </label>
+    <br>
+    <input type="submit" value="Сгенерировать пароль" class="btn btn-primary">
+
+</form>
+</div>
+</body>
+</html>
